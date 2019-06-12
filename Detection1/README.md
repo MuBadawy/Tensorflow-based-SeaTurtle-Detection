@@ -9,7 +9,7 @@ This repository is a tutorial for how to use TensorFlow's Object Detection API t
 
 
 This readme describes every step required to get going with your own object detection classifier: 
-1. [Installing TensorFlow-GPU](https://github.com/MuBadawy/Tensorflow-based-SeaTurtle-Detection#1-install-tensorflow-gpu-15-skip-this-step-if-tensorflow-gpu-15-is-already-installed)
+1. [Installing TensorFlow-GPU](https://github.com/MuBadawy/Tensorflow-based-SeaTurtle-Detection/Detection1#1-install-tensorflow-gpu-15-skip-this-step-if-tensorflow-gpu-15-is-already-installed)
 2. [Setting up the Object Detection directory structure and Anaconda Virtual Environment](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#2-set-up-tensorflow-directory-and-anaconda-virtual-environment)
 3. [Gathering and labeling pictures](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#3-gather-and-label-pictures)
 4. [Generating training data](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#4-generate-training-data)
