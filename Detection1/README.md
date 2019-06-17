@@ -17,10 +17,6 @@ This file describes how to use the already trained sea turtle detection model or
 
 The repository provides all the files needed to train a "Pinochle Deck" playing card detector that can accurately detect nines, tens, jacks, queens, kings, and aces. The tutorial describes how to replace these files with your own files to train a detection classifier for whatever your heart desires. It also has Python scripts to test your classifier out on an image, video, or webcam feed.
 
-<p align="center">
-  <img src="doc/detector1.jpg">
-</p>
-
 ## Introduction
 To get the program working, you have to have some prerequisties. As I used tensorflow GPU so there is a need of Nvidia GPU with Cuda and Cudnn installed. In my program I used Anaconda python 3.6 with tensorflow 1.12, CUDA 10 with cudnn 7
 
@@ -104,9 +100,6 @@ This opens the script in your default web browser and allows you to step through
 
 Once you have stepped all the way through the script, you should see two labeled images at the bottom section the page. If you see this, then everything is working properly! If not, the bottom section will report any errors encountered. See the [Appendix](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10#appendix-common-errors) for a list of errors I encountered while setting this up.
 
-<p align="center">
-  <img src="doc/jupyter_notebook_dogs.jpg">
-</p>
 
 ### 3. Gather and Label Pictures
 Now that the TensorFlow Object Detection API is all set up and ready to go, we need to provide the images it will use to train a new detection classifier.
@@ -116,9 +109,6 @@ TensorFlow needs hundreds of images of an object to train a good detection class
 
 For my Pinochle Card Detection classifier, I have six different objects I want to detect (the card ranks nine, ten, jack, queen, king, and ace – I am not trying to detect suit, just rank). I used my iPhone to take about 40 pictures of each card on its own, with various other non-desired objects in the pictures. Then, I took about another 100 pictures with multiple cards in the picture. I know I want to be able to detect the cards when they’re overlapping, so I made sure to have the cards be overlapped in many images.
 
-<p align="center">
-  <img src="doc/collage.jpg">
-</p>
 
 You can use your phone to take pictures of the objects or download images of the objects from Google Image Search. I recommend having at least 200 pictures overall. I used 311 pictures to train my card detector.
 
@@ -135,9 +125,7 @@ Here comes the fun part! With all the pictures gathered, it’s time to label th
 
 Download and install LabelImg, point it to your \images\train directory, and then draw a box around each object in each image. Repeat the process for all the images in the \images\test directory. This will take a while! 
 
-<p align="center">
-  <img src="doc/labels.jpg">
-</p>
+
 
 LabelImg saves a .xml file containing the label data for each image. These .xml files will be used to generate TFRecords, which are one of the inputs to the TensorFlow trainer. Once you have labeled and saved each image, there will be one .xml file for each image in the \test and \train directories.
 
@@ -280,11 +268,6 @@ Here we go! From the \object_detection directory, issue the following command to
 ```
 python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/faster_rcnn_inception_v2_pets.config
 ```
-If everything has been set up correctly, TensorFlow will initialize the training. The initialization can take up to 30 seconds before the actual training begins. When training begins, it will look like this:
-
-<p align="center">
-  <img src="doc/training.jpg">
-</p>
 
 Each step of training reports the loss. It will start high and get lower and lower as training progresses. For my training on the Faster-RCNN-Inception-V2 model, it started at about 3.0 and quickly dropped below 0.8. I recommend allowing your model to train until the loss consistently drops below 0.05, which will take about 40,000 steps, or about 2 hours (depending on how powerful your CPU and GPU are). Note: The loss numbers will be different if a different model is used. MobileNet-SSD starts with a loss of about 20, and should be trained until the loss is consistently under 2.
 
@@ -293,10 +276,6 @@ You can view the progress of the training job by using TensorBoard. To do this, 
 (tensorflow2) C:\tensorflow2\models\research\object_detection>tensorboard --logdir=training
 ```
 This will create a webpage on your local machine at YourPCName:6006, which can be viewed through a web browser. The TensorBoard page provides information and graphs that show how the training is progressing. One important graph is the Loss graph, which shows the overall loss of the classifier over time.
-
-<p align="center">
-  <img src="doc/loss_graph.JPG">
-</p>
 
 The training routine periodically saves checkpoints about every five minutes. You can terminate the training by pressing Ctrl+C while in the command prompt window. I typically wait until just after a checkpoint has been saved to terminate the training. You can terminate training and start it later, and it will restart from the last saved checkpoint. The checkpoint at the highest number of steps will be used to generate the frozen inference graph.
 
@@ -318,9 +297,6 @@ To run any of the scripts, type “idle” in the Anaconda Command Prompt (with 
 
 If everything is working properly, the object detector will initialize for about 10 seconds and then display a window showing any objects it’s detected in the image!
 
-<p align="center">
-  <img src="doc/detector2.jpg">
-</p>
 
 If you encounter errors, please check out the Appendix: it has a list of errors that I ran in to while setting up my object detection classifier. You can also trying Googling the error. There is usually useful information on Stack Exchange or in TensorFlow’s Issues on GitHub.
 
