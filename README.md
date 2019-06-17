@@ -14,10 +14,7 @@ This file describes how to use the already trained sea turtle detection model or
 7. [Exporting the inference graph]
 8. [Testing and using your newly trained object detection classifier]
 
-
-The repository provides all the files needed to train a "Pinochle Deck" playing card detector that can accurately detect nines, tens, jacks, queens, kings, and aces. The tutorial describes how to replace these files with your own files to train a detection classifier for whatever your heart desires. It also has Python scripts to test your classifier out on an image, video, or webcam feed.
-
-## Introduction
+# Introduction
 To get the program working, you have to have some prerequisties. As I used tensorflow GPU so there is a need of Nvidia GPU with Cuda and Cudnn installed. In my program I used Anaconda python 3.6 with tensorflow 1.12, CUDA 10 with cudnn 7
 
 
@@ -299,6 +296,9 @@ If everything is working properly, the object detector will initialize for about
 
 
 If you encounter errors, please check out the Appendix: it has a list of errors that I ran in to while setting up my object detection classifier. You can also trying Googling the error. There is usually useful information on Stack Exchange or in TensorFlow’s Issues on GitHub.
+
+# Acknowledgement
+This tutorial is totally based on the work done by Edje Electronics and you can follow his work through this [video] https://www.youtube.com/watch?v=Rgpfk6eYxJA
 
 ## Appendix: Common Errors
 It appears that the TensorFlow Object Detection API was developed on a Linux-based operating system, and most of the directions given by the documentation are for a Linux OS. Trying to get a Linux-developed software library to work on Windows can be challenging. There are many little snags that I ran in to while trying to set up tensorflow-gpu to train an object detection classifier on Windows 10. This Appendix is a list of errors I ran in to, and their resolutions.
